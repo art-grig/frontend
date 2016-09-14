@@ -1,0 +1,15 @@
+<h1>Videos</h1>
+<div infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1' class="col-md-12">
+    <div ng-repeat='item in reddit.items'>
+    <video style="margin-bottom:20px" preload="none" class="col-md-6 col-xs-12" poster="posters/57d46c74dd146e1a488aba6f.png" controls>
+        <source src="{{item.url}}" type="video/mp4">
+    </video>
+
+        <jk-rating-stars rating="firstRate" on-rating="onItemRating(rating)"></jk-rating-stars>
+        <div style="width: 100px">{{firstRate}} Stars</div>
+        <br>
+        <br>
+    </div>
+    <div ng-show='reddit.busy'>Loading data...</div>
+</div>
+
